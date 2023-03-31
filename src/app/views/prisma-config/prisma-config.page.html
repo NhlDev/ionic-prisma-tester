@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración ambiente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="prismaForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-list>
+
+
+      <ion-item class="scroll-x" lines="full">
+        <ion-label position="stacked">Ambientes preconfigurados</ion-label>
+        <br>
+        <ion-buttons>
+          <ion-button color="primary" fill="solid" *ngFor="let prisma of prismaNames" (click)="changeAmbient(prisma)">
+            {{prisma}}
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Servidor</ion-label>
+        <ion-input formControlName="server" type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+
+        <ion-label position="floating">Protocolo</ion-label>
+        <ion-select formControlName="protocol" interface="popover">
+          <ion-select-option value="https://">
+            HTTPS
+          </ion-select-option>
+          <ion-select-option value="http://">
+            HTTP
+          </ion-select-option>
+        </ion-select>
+
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Puerto</ion-label>
+        <ion-input formControlName="port" type="text" required></ion-input>
+      </ion-item>
+
+
+      <ion-item lines="full">
+        <ion-label position="floating">Token</ion-label>
+        <ion-input formControlName="app_token" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Customer ID</ion-label>
+        <ion-input formControlName="customer_id" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">PlaceHolder</ion-label>
+        <ion-input formControlName="placeholder" type="text" required></ion-input>
+      </ion-item>
+      <ion-button type="submit">
+        Cargar script de Prisma
+      </ion-button>
+    </ion-list>
+  </form>
+</ion-content>

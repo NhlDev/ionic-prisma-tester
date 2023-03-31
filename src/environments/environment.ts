@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  prismaConfiguration: {
+    protocol: 'https',
+    server: 'university.prismacampaigns.com',
+    port: '443',
+    app_token: '4bce3ccb-597e-4cb5-8d29-33d4a36b9a5a',
+    customer_id: 'nalderete'
+  }
 };
 
 /*

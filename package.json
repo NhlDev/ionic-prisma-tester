@@ -9,7 +9,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build-image": "docker build -t prisma-tester:latest ./",
+    "tag-docker": "docker tag prisma-tester southamerica-east1-docker.pkg.dev/dynamic-music-202823/prisma-tester/tester:latest",
+    "push-docker": "docker push southamerica-east1-docker.pkg.dev/dynamic-music-202823/prisma-tester/tester:latest"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +22,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@capacitor/android": "4.6.2",
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.6.2",
     "@capacitor/haptics": "4.1.0",

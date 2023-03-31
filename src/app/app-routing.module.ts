@@ -4,12 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'prisma-config',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'prisma-config',
+    loadChildren: () => import('./views/prisma-config/prisma-config.module').then( m => m.PrismaConfigPageModule)
+  },
+  {
+    path: 'banner-view',
+    loadChildren: () => import('./views/banner-view/banner-view.module').then( m => m.BannerViewPageModule)
   }
 ];
 
